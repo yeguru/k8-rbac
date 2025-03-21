@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::050451372978:role/eksctl-expense-nodegroup-expense-NodeInstanceRole-mWPrKuNlu4DR
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - default-trainee
+      userarn: arn:aws:iam::050451372978:user/yeguru
+      username: yeguru
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2025-03-21T02:33:35Z"
+  name: aws-auth
+  namespace: kube-system
+  uid: f5294b06-3d2c-4bc2-aad9-f75be36431e5
